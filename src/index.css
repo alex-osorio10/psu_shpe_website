@@ -612,6 +612,13 @@ footer p {
   }
 }
 
+.officer-photo {
+  width: 100%; /* Makes the image fill the width of the container */
+  height: auto; /* Keeps the aspect ratio */
+  aspect-ratio: 5 / 7; /* Ensures a consistent 5x7 ratio */
+  object-fit: cover; /* Ensures the image fits within the aspect ratio while cropping excess */
+  border-radius: 8px 8px 0 0; /* Rounds the top corners for consistency */
+}
 
 
 .officers-container {
@@ -699,6 +706,7 @@ footer p {
   background-color: #e3ebff;
   border: 8px solid black;
   overflow: hidden; /* Ensures boxes stay within section bounds */
+  flex-direction: row; /* Default: text and image side by side */
 }
 
 .about-image-container {
@@ -728,9 +736,24 @@ footer p {
 }
 
 .about-description {
-  font-size: 1.4rem;  /* Maintain or slightly increase font size */
-  line-height: 1.8;   /* Increase line spacing */
-  margin-bottom: 20px;  /* Space between sections */
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .about-section-container {
+    flex-direction: column; /* Stack image and text vertically */
+  }
+
+  .about-image-container {
+    margin-bottom: 20px; /* Add spacing between image and text */
+  }
+
+  .about-image {
+    width: 100%; /* Ensure the image takes up the full width of its container */
+  }
 }
 
 
